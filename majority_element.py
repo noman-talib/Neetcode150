@@ -1,5 +1,11 @@
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        nums.sort()
-        n = len(nums)
-        return nums[n//2]
+    def longestCommonPrefix(self, strs):
+        if not strs:
+            return ""
+        prefix = strs[0]
+        for string in strs[1:]:
+            while string.find(prefix) != 0:
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+        return prefix
